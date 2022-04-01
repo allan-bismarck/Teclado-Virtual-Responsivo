@@ -177,7 +177,7 @@ function showNumbersSpecials(index) {
             specials[i].style.display = "none" 
         }
 
-        document.getElementById('space').style.gridArea = "4 / 2 / 4 / 9"
+        document.getElementById('space').style.gridArea = "4 / 2 / 4 / 10"
 
         for(let i = 0; i < letters.length; i++) {
             letters[i].style.display = "flex" 
