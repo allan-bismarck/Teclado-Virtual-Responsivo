@@ -1,2 +1,2 @@
 # Teclado Virtual Responsivo
-Teclado Responsivo feito com HTML, CSS e JavaScript
+Teclado responsivo feito com HTML, CSS e JavaScript
