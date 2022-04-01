@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teclado Virtual</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300&display=swap" rel="stylesheet">
+</head>
+<body onresize="showAll()">
+    <h1>TECLADO VIRTUAL RESPONSIVO</h1>
+
+    <h2>Selecione o tema</h2>
+
+    <div id="minibox">
+        <div>
+            <input onchange="AlternateTheme()" id="light" class="radio" type="radio" name="theme" checked>
+            <label for="light">Light</label>
+        </div>
+        <div>
+            <input onchange="AlternateTheme()" id="dark" class="radio" type="radio" name="theme">
+            <label for="dark">Dark</label>
+        </div>
+    </div>
+
+    <div id="box">
+        <textarea type="text" id="text" name="text" rows="3"></textarea>
+
+        <div id="keyboard">
+            <button onmouseover="bghover(0)" onmouseout="bgout(0)" onclick="writer('+')" class="special">+</button>
+            <button onmouseover="bghover(1)" onmouseout="bgout(1)" onclick="writer('=')" class="special">=</button>
+            <button onmouseover="bghover(2)" onmouseout="bgout(2)" onclick="writer('\\')" class="special">\</button>
+            <button onmouseover="bghover(3)" onmouseout="bgout(3)" onclick="writer('/')" class="special">/</button>
+            <button onmouseover="bghover(4)" onmouseout="bgout(4)" onclick="writer('?')" class="special">?</button>
+            <button onmouseover="bghover(5)" onmouseout="bgout(5)" onclick="writer('<')" class="special"><</button>
+            <button onmouseover="bghover(6)" onmouseout="bgout(6)" onclick="writer('>')" class="special">></button>
+            <button onmouseover="bghover(7)" onmouseout="bgout(7)" onclick="writer(':')" class="special">:</button>
+            <button onmouseover="bghover(8)" onmouseout="bgout(8)" onclick="writer(';')" class="special">;</button>
+            <button onmouseover="bghover(9)" onmouseout="bgout(9)" onclick="writer('^')" class="special">^</button>
+            <button onmouseover="bghover(10)" onmouseout="bgout(10)" onclick="writer('~')" class="special">~</button>
+            <button onmouseover="bghover(11)" onmouseout="bgout(11)" onclick="writer('!')" class="special">!</button>
+            <button onmouseover="bghover(12)" onmouseout="bgout(12)" onclick="writer('@')" class="special">@</button>
+            <button onmouseover="bghover(13)" onmouseout="bgout(13)" onclick="writer('#')" class="special">#</button>
+            <button onmouseover="bghover(14)" onmouseout="bgout(14)" onclick="writer('$')" class="special">$</button>
+            <button onmouseover="bghover(15)" onmouseout="bgout(15)" onclick="writer('%')" class="special">%</button>
+            <button onmouseover="bghover(16)" onmouseout="bgout(16)" onclick="writer('&')" class="special">&</button>
+            <button onmouseover="bghover(17)" onmouseout="bgout(17)" onclick="writer('*')" class="special">*</button>
+            <button onmouseover="bghover(18)" onmouseout="bgout(18)" onclick="writer('(')" class="special line4">(</button>
+            <button onmouseover="bghover(19)" onmouseout="bgout(19)" onclick="writer(')')" class="special line4">)</button>
+            <button onmouseover="bghover(20)" onmouseout="bgout(20)" onclick="writer('_')" class="special line4">_</button>
+            <button onmouseover="bghover(21)" onmouseout="bgout(21)" onclick="writer('-')" class="special">-</button>
+            <button onmouseover="bghover(22)" onmouseout="bgout(22)" onclick="writer('1')" class="number">1</button>
+            <button onmouseover="bghover(23)" onmouseout="bgout(23)" onclick="writer('2')" class="number">2</button>
+            <button onmouseover="bghover(24)" onmouseout="bgout(24)" onclick="writer('3')" class="number">3</button>
+            <button onmouseover="bghover(25)" onmouseout="bgout(25)" onclick="writer('4')" class="number">4</button>
+            <button onmouseover="bghover(26)" onmouseout="bgout(26)" onclick="writer('5')" class="number">5</button>
+            <button onmouseover="bghover(27)" onmouseout="bgout(27)" onclick="writer('6')" class="number">6</button>
+            <button onmouseover="bghover(28)" onmouseout="bgout(28)" onclick="writer('7')" class="number">7</button>
+            <button onmouseover="bghover(29)" onmouseout="bgout(29)" onclick="writer('8')" class="number">8</button>
+            <button onmouseover="bghover(30)" onmouseout="bgout(30)" onclick="writer('9')" class="number">9</button>
+            <button onmouseover="bghover(31)" onmouseout="bgout(31)" onclick="writer('0')" class="number">0</button>
+            <button onmouseover="bghover(32)" onmouseout="bgout(32)" onclick="Delete()" id="backspace">
+                <img src="imagens/backspaceLight.png" alt="backspace">
+            </button>
+            <button onmouseover="bghover(33)" onmouseout="bgout(33)" onclick="writer('q')" class="letter">q</button>
+            <button onmouseover="bghover(34)" onmouseout="bgout(34)" onclick="writer('w')" class="letter">w</button>
+            <button onmouseover="bghover(35)" onmouseout="bgout(35)" onclick="writer('e')" class="letter">e</button>
+            <button onmouseover="bghover(36)" onmouseout="bgout(36)" onclick="writer('r')" class="letter">r</button>
+            <button onmouseover="bghover(37)" onmouseout="bgout(37)" onclick="writer('t')" class="letter">t</button>
+            <button onmouseover="bghover(38)" onmouseout="bgout(38)" onclick="writer('y')" class="letter">y</button>
+            <button onmouseover="bghover(39)" onmouseout="bgout(39)" onclick="writer('u')" class="letter">u</button>
+            <button onmouseover="bghover(40)" onmouseout="bgout(40)" onclick="writer('i')" class="letter">i</button>
+            <button onmouseover="bghover(41)" onmouseout="bgout(41)" onclick="writer('o')" class="letter">o</button>
+            <button onmouseover="bghover(42)" onmouseout="bgout(42)" onclick="writer('p')" class="letter">p</button>
+            <button onmouseover="bghover(43)" onmouseout="bgout(43)" onclick="writer('\n')" id="enter">
+                Enter
+                <br>
+                <br>
+                <img src="imagens/enterLight.png" alt="enter">
+            </button>
+            <button onmouseover="bghover(44)" onmouseout="bgout(44)" onclick="writer('a')" class="letter line2">a</button>
+            <button onmouseover="bghover(45)" onmouseout="bgout(45)" onclick="writer('s')" class="letter line2">s</button>
+            <button onmouseover="bghover(46)" onmouseout="bgout(46)" onclick="writer('d')" class="letter line2">d</button>
+            <button onmouseover="bghover(47)" onmouseout="bgout(47)" onclick="writer('f')" class="letter line2">f</button>
+            <button onmouseover="bghover(48)" onmouseout="bgout(48)" onclick="writer('g')" class="letter line2">g</button>
+            <button onmouseover="bghover(49)" onmouseout="bgout(49)" onclick="writer('h')" class="letter line2">h</button>
+            <button onmouseover="bghover(50)" onmouseout="bgout(50)" onclick="writer('j')" class="letter line2">j</button>
+            <button onmouseover="bghover(51)" onmouseout="bgout(51)" onclick="writer('k')" class="letter line2">k</button>
+            <button onmouseover="bghover(52)" onmouseout="bgout(52)" onclick="writer('l')" class="letter line2">l</button>
+            <button onmouseover="bghover(53)" onmouseout="bgout(53)" onclick="writer('ç')" class="letter line3">ç</button>
+            <button onmouseover="bghover(54)" onmouseout="bgout(54)" onclick="SingleShifter()" ondblclick="PermanentShifter()" id="shift">
+                <img src="imagens/shiftLight.png" alt="shift">
+                Shift
+            </button>
+            <button onmouseover="bghover(55)" onmouseout="bgout(55)" onclick="writer('z')" class="letter line3">z</button>
+            <button onmouseover="bghover(56)" onmouseout="bgout(56)" onclick="writer('x')" class="letter line3">x</button>
+            <button onmouseover="bghover(57)" onmouseout="bgout(57)" onclick="writer('c')" class="letter line3">c</button>
+            <button onmouseover="bghover(58)" onmouseout="bgout(58)" onclick="writer(' ')" id="space"></button>
+            <button onmouseover="bghover(59)" onmouseout="bgout(59)" onclick="writer('v')" class="letter line3">v</button>
+            <button onmouseover="bghover(60)" onmouseout="bgout(60)" onclick="writer('b')" class="letter line3">b</button>
+            <button onmouseover="bghover(61)" onmouseout="bgout(61)" onclick="writer('n')" class="letter line3">n</button>
+            <button onmouseover="bghover(62)" onmouseout="bgout(62)" onclick="writer('m')" class="letter line3">m</button>
+            <button onmouseover="bghover(63)" onmouseout="bgout(63)" onclick="showNumbersSpecials(63)" id="specials">1?#</button>
+        </div>
+    </div>
+</body>
+<footer>
+    <p>Um clique para ativar o shift único</p>
+    <p>Duplo clique para ativar o shift permanente</p>
+</footer>
+    <script src="script.js"></script>
+</html>
