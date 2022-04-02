@@ -55,11 +55,6 @@ function bghover(index) {
             break;
         }
     }
-    if(window.screen.width < 750) {
-        
-        buttons[index].style.backgroundColor = "var(--TerColor)"
-        buttons[index].style.color = "var(--SecondaryColor)"
-    }
 }
 
 function bgout(index) {
