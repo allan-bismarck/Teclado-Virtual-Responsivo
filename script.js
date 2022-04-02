@@ -5,86 +5,142 @@ let singleshifter = false
 let permanentshifter = false
 
 lightTheme = document.getElementById('light')
-body = document.querySelector('body')
-h2 = document.querySelector('h2')
-h1 = document.querySelector('h1')
-box = document.getElementById('box')
-minibox = document.getElementById('minibox')
-textarea = document.querySelector('textarea')
-radio = document.querySelectorAll('radio')
-buttons = document.querySelectorAll('button')
-keyboard = document.getElementById('keyboard')
-enter_img = document.querySelector('#enter > img')
-shift_img = document.querySelector('#shift > img')
-backspace_img = document.querySelector('#backspace > img')
-footer = document.querySelectorAll('footer > p')
+const body = document.querySelector('body')
+const h2 = document.querySelector('h2')
+const h1 = document.querySelector('h1')
+const box = document.getElementById('box')
+const minibox = document.getElementById('minibox')
+const textarea = document.querySelector('textarea')
+const radio = document.querySelectorAll('radio')
+const buttons = document.querySelectorAll('button')
+const keyboard = document.getElementById('keyboard')
+const enter_img = document.querySelector('#enter > img')
+const shift_img = document.querySelector('#shift > img')
+const backspace_img = document.querySelector('#backspace > img')
+const footer = document.querySelectorAll('footer > p')
 
 let showNumSpec = false
-numbers = document.getElementsByClassName('number')
-specials = document.getElementsByClassName('special')
+const numbers = document.getElementsByClassName('number')
+const specials = document.getElementsByClassName('special')
 
 function bghover(index) {
+    buttons[index].style.backgroundColor = "var(--SecondaryColor)"
+    buttons[index].style.color = "var(--TerColor)"
     if(lightTheme.checked) {
-        buttons[index].style.backgroundColor = "#78c5f125"
+        switch(index) {
+            case 32:
+                backspace_img.src = "imagens/backspaceLightHover.png"
+            break;
+            case 43:
+                enter_img.src = "imagens/enterLightHover.png"
+            break;
+            case 54:
+                shift_img.src = "imagens/shiftLightHover.png"
+            break;
+            default:
+            break;
+        }
     } else {
-        buttons[index].style.backgroundColor = "#ffffff2a"
+        switch(index) {
+            case 32:
+                backspace_img.src = "imagens/backspaceDarkHover.png"
+            break;
+            case 43:
+                enter_img.src = "imagens/enterDarkHover.png"
+            break;
+            case 54:
+                shift_img.src = "imagens/shiftDarkHover.png"
+            break;
+            default:
+            break;
+        }
+    }
+    if(window.screen.width < 750) {
+        
+        buttons[index].style.backgroundColor = "var(--TerColor)"
+        buttons[index].style.color = "var(--SecondaryColor)"
     }
 }
 
 function bgout(index) {
+    buttons[index].style.backgroundColor = "var(--TerColor)"
+    buttons[index].style.color = "var(--SecondaryColor)"
     if(lightTheme.checked) {
-        buttons[index].style.backgroundColor = "#F2F2F2"
+        switch(index) {
+            case 32:
+                backspace_img.src = "imagens/backspaceLight.png"
+            break;
+            case 43:
+                enter_img.src = "imagens/enterLight.png"
+            break;
+            case 54:
+                shift_img.src = "imagens/shiftLight.png"
+            break;
+            default:
+            break;
+        } 
     } else {
-        buttons[index].style.backgroundColor = "#262626"
+        switch(index) {
+            case 32:
+                backspace_img.src = "imagens/backspaceDark.png"
+            break;
+            case 43:
+                enter_img.src = "imagens/enterDark.png"
+            break;
+            case 54:
+                shift_img.src = "imagens/shiftDark.png"
+            break;
+            default:
+            break;
+        }    
     }
 }
 
-function LightTheme() {
-    body.style.backgroundColor = "#D0E5F2"
-    h1.style.color = "#0A9EBF"
-    h2.style.color = "#96CCD9"
-    textarea.style.backgroundColor = "#F2F2F2"
-    box.style.backgroundColor = "#0A9EBF"
-    keyboard.style.backgroundColor = "#D0E5F2"
-    minibox.style.backgroundColor = "#0A9EBF"
-    for(let i = 0; i < buttons.length; i++) {
-        buttons[i].style.backgroundColor = "#F2F2F2"
-        buttons[i].style.color = "#0A9EBF"
-    }
-    text.style.color = "#0A9EBF"
-    enter_img.src = "imagens/enterLight.png"
-    shift_img.src = "imagens/shiftLight.png"
-    backspace_img.src = "imagens/backspaceLight.png"
-    footer[0].style.color = "#0A9EBF"
-    footer[1].style.color = "#0A9EBF"
+function bghoverMobile(index) {
+    buttons[index].style.transition = 'background-color 0.15s'
+    buttons[index].style.backgroundColor = 'blue'
+    buttons[index].style.transition = 'background-color 0.15s'
+    buttons[index].style.backgroundColor = 'var(--TerColor)'
 }
 
-function DarkTheme() {
-    body.style.backgroundColor = "#262626"
-    h1.style.color = "white"
-    h2.style.color = "#A6A6A6"
-    textarea.style.backgroundColor = "#262626"
-    box.style.backgroundColor = "#0D0D0D"
-    keyboard.style.backgroundColor = "#8C2769"
-    minibox.style.backgroundColor = "#0D0D0D"
+function ChangeTheme() {
+    body.style.backgroundColor = "var(--PrimaryColor)"
+    h1.style.color = "var(--SecondaryColor)"
+    h2.style.color = "var(--FourColor)"
+    textarea.style.backgroundColor = "var(--TerColor)"
+    box.style.backgroundColor = "var(--SecondaryColor)"
+    keyboard.style.backgroundColor = "var(--PrimaryColor)"
+    minibox.style.backgroundColor = "var(--SecondaryColor)"
     for(let i = 0; i < buttons.length; i++) {
-        buttons[i].style.backgroundColor = "#262626"
-        buttons[i].style.color = "white"
+        buttons[i].style.backgroundColor = "var(--TerColor)"
+        buttons[i].style.color = "var(--SecondaryColor)"
     }
-    text.style.color = "white"
-    enter_img.src = "imagens/enterDark.png"
-    shift_img.src = "imagens/shiftDark.png"
-    backspace_img.src = "imagens/backspaceDark.png"
-    footer[0].style.color = "white"
-    footer[1].style.color = "white"
+    text.style.color = "var(--SecondaryColor)"
+    footer[0].style.color = "var(--SecondaryColor)"
+    footer[1].style.color = "var(--SecondaryColor)"
 }
 
 function AlternateTheme() {
     if(lightTheme.checked) {
-        LightTheme()
+        document.documentElement.style.setProperty('--buttonHover', 'green')
+        document.documentElement.style.setProperty('--PrimaryColor', '#D0E5F2')
+        document.documentElement.style.setProperty('--SecondaryColor', '#0A9EBF')
+        document.documentElement.style.setProperty('--TerColor', '#F2F2F2')
+        document.documentElement.style.setProperty('--FourColor', '#96CCD9')
+        enter_img.src = "imagens/enterLight.png"
+        shift_img.src = "imagens/shiftLight.png"
+        backspace_img.src = "imagens/backspaceLight.png"
     } else {
-        DarkTheme()
+        document.documentElement.style.setProperty('--buttonHover', 'white')
+        document.documentElement.style.setProperty('--PrimaryColor', '#202529')
+        document.documentElement.style.setProperty('--SecondaryColor', '#A1B4C4')
+        document.documentElement.style.setProperty('--TerColor', '#32383D')
+        document.documentElement.style.setProperty('--FourColor', '#4C555C')
+        enter_img.src = "imagens/enterDark.png"
+        shift_img.src = "imagens/shiftDark.png"
+        backspace_img.src = "imagens/backspaceDark.png"
     }
+    ChangeTheme()
 }
 
 function UpperCaseKeyBoard() {
@@ -99,7 +155,7 @@ function LowerCaseKeyBoard() {
     }
 }
 
-function writer(char) {
+function writer(char,) {
     if(isSmall) {
         text.value += char    
     } else {
@@ -110,7 +166,6 @@ function writer(char) {
         singleshifter = !singleshifter
         LowerCaseKeyBoard()
     }
-
 }
 
 function PermanentShifter() {

@@ -1,8 +1,17 @@
 @charset "UTF-8";
 
+:root {
+    --buttonHover: #78c5f125;
+    --PrimaryColor: #D0E5F2;
+    --SecondaryColor: #0A9EBF;
+    --TerColor: #F2F2F2;
+    --FourColor: #96CCD9;
+}
+
 * {
     margin: 0px;
     padding: 0px;
+    transition: 0.5s;
 }
 
 @font-face {
@@ -13,21 +22,20 @@
 body {
     text-align: center;
     font-family: 'Barlow', sans-serif;
-    background-color: #D0E5F2;
-
+    background-color: var(--PrimaryColor);
 }
 
 #box {
-    max-width: 730px;
+    max-width: 735px;
     padding: 10px;
     margin: 10px auto 0px auto;
-    background-color: #0A9EBF;
+    background-color: var(--SecondaryColor);
 }
 
 h1 {
     font-family: 'RussoOne-Regular';
     font-size: 40px;
-    color: #0A9EBF;
+    color: var(--SecondaryColor);
     padding: 20px 10px 0px 10px;
 }
 
@@ -35,11 +43,11 @@ h2 {
     font-size: 30px;
     margin-bottom: 5px;
     padding: 0px 10px;
-    color: #96CCD9;
+    color: var(--FourColor);
 }
 
 #minibox {
-    background-color: #0A9EBF;
+    background-color: var(--SecondaryColor);
     padding: 5px;
     width: 140px;
     margin: 0px auto;
@@ -56,7 +64,7 @@ h2 {
 
 label {
     font-size: 20px;
-    color: white;
+    color: var(--TerColor);
     font-weight: bold;
 }
 
@@ -64,17 +72,17 @@ label {
     width: 560px;
     max-width: 560px;
     max-height: 60px;
-    background-color: #F2F2F2;
+    background-color: var(--TerColor);
     border-radius: 10px;
     margin: 0px auto 10px auto;
     font-size: 20px;
     padding: 5px 15px;
     flex-wrap: wrap;
-    color: #0A9EBF;
+    color: var(--SecondaryColor);
 }
 
 #text:focus {
-    background-color: #D0E5F2;
+    background-color: var(--PrimaryColor);
 }
 
 #keyboard {
@@ -83,7 +91,7 @@ label {
     grid-template-columns: repeat(11, 60px);
     grid-template-rows: repeat(6, 50px);
     gap: 6px;
-    background-color: #D0E5F2;
+    background-color: var(--PrimaryColor);
     max-width: 98%;
     border-radius: 7px;
 }
@@ -94,22 +102,23 @@ label {
 }
 
 button {
-    background-color: #F2F2F2;
+    background-color: var(--TerColor);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     font-weight: bold;
     font-size: 30px;
-    color: #0A9EBF;
+    color: var(--SecondaryColor);
     border: none;
-    width: 60px;
+    width: 100%;
     height: 50px;
     border-radius: 5px;
 }
 
 button:hover {
-    background-color: #78c5f125;
+    background-color: var(--SecondaryColor);
+    color: var(--TerColor);
 }
 
 img {
@@ -153,7 +162,7 @@ footer {
 }
 
 footer > p {
-    color: #0A9EBF;
+    color: var(--SecondaryColor);
     font-weight: bold;
     font-size: 20px;
 }
@@ -161,8 +170,8 @@ footer > p {
 @media (min-width: 751px) {
 
     #box {
-        max-width: 730px;
         margin: 10px auto 0px auto;
+        padding: 10px;
     }
 
     h1 {
@@ -229,7 +238,7 @@ footer > p {
         align-items: center;
         font-weight: bold;
         font-size: 30px;
-        width: 60px;
+        width: 100%;
         height: 50px;
     }
 
@@ -286,13 +295,11 @@ footer > p {
 
     h1 {
         padding: 20px 10px 0px 10px;
-        width: 100%;
 
     }
 
     h2 {
         padding: 0px 10px;
-        width: 100%;
 
     }
 
@@ -302,8 +309,8 @@ footer > p {
     }
 
     #box {
-        width: 100%;
         margin: 10px auto 0px auto;
+
     }
     
     #keyboard {
@@ -355,9 +362,9 @@ footer > p {
     footer {
         flex-direction: column;
         padding: 10px;
-        width: 100%;
         justify-content: center;
         align-items: center;
+
     }
     
     footer > p {
@@ -373,21 +380,15 @@ footer > p {
 }
 
 @media (min-width: 0px) and (max-width: 499px) {
-    body {
-        width: 100%;
-    }
-
     h1 {
         font-size: 25px;
         padding: 20px 10px 0px 10px;
-        width: 100%;
 
     }
 
     h2 {
         font-size: 20px;
         padding: 0px 10px;
-        width: 100%;
 
     }
 
@@ -405,7 +406,6 @@ footer > p {
     
     label {
         font-size: 20px;
-        color: white;
         font-weight: bold;
     }
 
@@ -415,8 +415,8 @@ footer > p {
     }
 
     #box {
-        width: 100%;
         margin: 10px auto 0px auto;
+
     }
     
     #keyboard {
@@ -490,10 +490,10 @@ footer > p {
     
     footer {
         flex-direction: column;
-        width: 100%;
         justify-content: center;
         align-items: center;
         padding: 10px;
+
     }
     
     footer > p {
