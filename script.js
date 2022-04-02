@@ -24,6 +24,17 @@ const numbers = document.getElementsByClassName('number')
 const specials = document.getElementsByClassName('special')
 
 function bghover(index) {
+    if(detectTouchDevice()) {
+        buttons[index].addEventListener("click", function() {
+            buttons[index].style.animation = ""
+            setTimeout(() => buttons[index].style.animation = "buttonCLickMobile 0.3s linear", 5);
+        })
+    } else {
+        hoverDesktop(index);
+    }
+}
+
+function hoverDesktop(index) {
     buttons[index].style.backgroundColor = "var(--SecondaryColor)"
     buttons[index].style.color = "var(--TerColor)"
     if(lightTheme.checked) {
@@ -91,13 +102,6 @@ function bgout(index) {
     }
 }
 
-function bghoverMobile(index) {
-    buttons[index].style.transition = 'background-color 0.15s'
-    buttons[index].style.backgroundColor = 'blue'
-    buttons[index].style.transition = 'background-color 0.15s'
-    buttons[index].style.backgroundColor = 'var(--TerColor)'
-}
-
 function ChangeTheme() {
     body.style.backgroundColor = "var(--PrimaryColor)"
     h1.style.color = "var(--SecondaryColor)"
@@ -150,7 +154,7 @@ function LowerCaseKeyBoard() {
     }
 }
 
-function writer(char,) {
+function writer(char) {
     if(isSmall) {
         text.value += char    
     } else {
@@ -204,15 +208,18 @@ function showNumbersSpecials(index) {
 
         for(let i = 0; i < letters.length; i++) {
             letters[i].style.display = "none" 
+            letters[i].style.animation = ""
         }
 
         document.getElementById('space').style.gridArea = "4 / 3 / 4 / 7"
         for(let i = 0; i < numbers.length; i++) {
             numbers[i].style.display = "flex" 
+            numbers[i].style.animation = ""
         }
 
         for(let i = 0; i < specials.length; i++) {
             specials[i].style.display = "flex" 
+            specials[i].style.animation = ""
         }
 
     } else {
@@ -221,16 +228,19 @@ function showNumbersSpecials(index) {
 
         for(let i = 0; i < numbers.length; i++) {
             numbers[i].style.display = "none" 
+            numbers[i].style.animation = ""
         }
 
         for(let i = 0; i < specials.length; i++) {
             specials[i].style.display = "none" 
+            specials[i].style.animation = ""
         }
 
         document.getElementById('space').style.gridArea = "4 / 2 / 4 / 10"
 
         for(let i = 0; i < letters.length; i++) {
             letters[i].style.display = "flex" 
+            letters[i].style.animation = ""
         }
     }
 }
@@ -262,4 +272,10 @@ function showAll() {
             document.getElementById('space').style.gridArea = "6 / 5 / 6 / 8"
         }
     }
+}
+
+function detectTouchDevice() {
+    return (('ontouchstart' in window) ||
+       (navigator.maxTouchPoints > 0) ||
+       (navigator.msMaxTouchPoints > 0));
 }

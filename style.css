@@ -116,9 +116,21 @@ button {
     border-radius: 5px;
 }
 
-button:hover {
-    background-color: var(--SecondaryColor);
-    color: var(--TerColor);
+@keyframes buttonCLickMobile {
+    0% {
+        background-color: var(--TerColor);
+        color: var(--SecondaryColor);
+    }
+
+    50% {
+        background-color: var(--SecondaryColor);
+        color: var(--TerColor);
+    }
+
+    100% {
+        background-color: var(--TerColor);
+        color: var(--SecondaryColor);
+    }
 }
 
 img {
@@ -158,7 +170,8 @@ footer {
     flex-direction: row;
     max-width: 720px;
     justify-content: space-between;
-    margin: 10px auto;
+    margin: 0px auto;
+    padding: 5px;
 }
 
 footer > p {
