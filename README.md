@@ -1,6 +1,6 @@
 <a href="README_portuguese.md" target="_blank">Leia essa página em português<a/> 
 
-# Teclado Virtual Responsivo
+# Responsive Virtual Keyboard
 
 ### Link: https://allanbismarck123.github.io/Teclado-Virtual-Responsivo/
 
