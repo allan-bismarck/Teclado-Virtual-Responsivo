@@ -4,7 +4,7 @@
 
 ## Link: https://allanbismarck123.github.io/Teclado-Virtual-Responsivo/
 
-## ✨ Description
+## ✨ Description project.
 
 #### <p align="justify">Responsive virtual keyboard developed with HTML, CSS and JavaScript. This was an idea suggested by the Youtube channel Attekita Dev in one of their videos. In addition to being a virtual keyboard that adapts to different types of devices, it also has the option to change the theme (light and dark), making its layout customized according to the colors of the chosen theme.</p>
 
